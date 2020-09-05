@@ -1,0 +1,8 @@
+{
+  "name": "niel.to",
+  "short_name": "niel",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "scope": "/"
+}
