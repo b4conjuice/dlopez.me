@@ -8,14 +8,14 @@ const Portfolio = ({ portfolio }) => (
   <Page>
     <main className="flex flex-col flex-grow space-y-4 md:w-full md:items-center">
       <Title className="text-cobalt">portfolio</Title>
-      <ul className="px-4 space-y-4 md:flex md:space-y-0 md:space-x-4">
+      <ul className="grid grid-cols-1 gap-4 px-4 lg:container lg:max-w-3xl lg:grid-cols-2">
         {portfolio.map(({ url, text, description }) => (
           <li
             key={url}
-            className="bg-white rounded-lg shadow md:hover:bg-blue-100 md:w-1/2 text-cobalt"
+            className="bg-white rounded-lg shadow md:hover:bg-blue-100 text-cobalt"
           >
             <a
-              className="block p-4 md:text-2xl"
+              className="block h-full p-4 md:text-2xl"
               href={url}
               target="_blank"
               rel="noopener noreferrer"
@@ -48,7 +48,7 @@ const Portfolio = ({ portfolio }) => (
   </Page>
 )
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const id = process.env.PORTFOLIO_ID
   const doc = await db.collection('notes').doc(id).get()
   const note = { id: doc.id, ...doc.data() }

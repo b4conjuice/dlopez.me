@@ -7,13 +7,13 @@ import db from '@/lib/db'
 const Resume = ({ markdown }) => (
   <Page>
     <article
-      className="p-4 mx-4 my-4 prose bg-white rounded-lg shadow lg:mx-auto lg:px-8 lg:py-4 lg:prose-xl"
+      className="flex-grow p-4 m-4 prose bg-white rounded-lg shadow lg:mx-auto lg:px-8 lg:py-4 lg:prose-xl lg:container lg:max-w-3xl"
       dangerouslySetInnerHTML={{ __html: markdown }}
     />
   </Page>
 )
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const id = process.env.RESUME_ID
   const doc = await db.collection('notes').doc(id).get()
   const { markdown } = { id: doc.id, ...doc.data() }
