@@ -34,12 +34,17 @@ module.exports = {
           a: {
             // color: theme('colors.cb-dusty-blue'),
             color: false,
-            '@apply text-cb-dusty-blue dark:text-cb-light-blue': '',
+            '@apply text-cb-dusty-blue dark:text-cb-pink': '',
+          },
+          'h3 > a': {
+            color: false,
+            '@apply text-cb-dusty-blue dark:text-cb-yellow': '',
+            textDecoration: 'none',
           },
           'ul > li:before': {
             // backgroundColor: theme('colors.cb-dusty-blue'),
             backgroundColor: false,
-            '@apply bg-cb-dusty-blue dark:bg-cb-light-blue': '',
+            '@apply bg-cb-dusty-blue dark:bg-gray-600': '',
           },
         },
       },
