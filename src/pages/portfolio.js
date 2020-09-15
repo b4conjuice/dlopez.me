@@ -7,7 +7,7 @@ import db from '@/lib/db'
 const Portfolio = ({ portfolio }) => (
   <Page>
     <main className="flex flex-col flex-grow space-y-4 md:w-full md:items-center">
-      <Title className="text-cobalt">portfolio</Title>
+      <Title>portfolio</Title>
       <ul className="grid grid-cols-1 gap-4 px-4 lg:container lg:max-w-3xl lg:grid-cols-2">
         {portfolio.map(({ url, text, description }) => (
           <li

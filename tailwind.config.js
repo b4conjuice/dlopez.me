@@ -1,6 +1,11 @@
 module.exports = {
+  experimental: {
+    darkModeVariant: true,
+    applyComplexClasses: true,
+  },
   future: {
     removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
   purge: [
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -10,10 +15,14 @@ module.exports = {
     typography: theme => ({
       default: {
         css: {
-          color: theme('colors.cobalt'),
+          // color: theme('colors.cobalt'),
+          color: false,
+          '@apply text-cobalt dark:text-gray-300': '',
           strong: theme('colors.cobalt'),
           'h1, h2, h3, h4': {
-            color: theme('colors.cobalt'),
+            // color: theme('colors.cobalt'),
+            color: false,
+            '@apply text-cobalt dark:text-gray-300': '',
             fontWeight: 'bold',
             marginTop: 0,
           },
@@ -23,10 +32,14 @@ module.exports = {
             textAlign: 'center',
           },
           a: {
-            color: theme('colors.cb-dusty-blue'),
+            // color: theme('colors.cb-dusty-blue'),
+            color: false,
+            '@apply text-cb-dusty-blue dark:text-cb-light-blue': '',
           },
           'ul > li:before': {
-            backgroundColor: theme('colors.cb-dusty-blue'),
+            // backgroundColor: theme('colors.cb-dusty-blue'),
+            backgroundColor: false,
+            '@apply bg-cb-dusty-blue dark:bg-cb-light-blue': '',
           },
         },
       },

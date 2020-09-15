@@ -22,7 +22,7 @@ const nav = [
 const Page = ({ title = DEFAULT_TITLE, children }) => {
   const { pathname } = useRouter()
   return (
-    <div className="flex flex-col min-h-screen text-gray-900 bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-cobalt dark:text-gray-100 text-cobalt">
       <Head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -105,14 +105,14 @@ const Page = ({ title = DEFAULT_TITLE, children }) => {
       </Head>
       <header>
         <nav className="px-2 py-1 text-lg">
-          <ul className="flex justify-center space-x-3 text-cobalt">
+          <ul className="flex justify-center space-x-3">
             {nav.map(({ url, text }) => (
               <li
                 key={url}
                 className={
                   pathname === url || pathname.includes(`${url}/`)
-                    ? 'border-b-2 border-cobalt'
-                    : 'hover:border-b-2 hover:border-cobalt'
+                    ? 'border-b-2 border-cobalt dark:border-gray-100'
+                    : 'hover:border-b-2 hover:border-cobalt dark:hover:border-gray-100'
                 }
               >
                 {pathname === url ? (
