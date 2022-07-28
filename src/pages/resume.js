@@ -6,10 +6,12 @@ import db from '@/lib/db'
 
 const Resume = ({ markdown }) => (
   <Page>
-    <article
-      className="flex-grow p-4 m-4 prose bg-white rounded-lg shadow lg:mx-auto lg:px-8 lg:py-4 lg:prose-xl lg:container lg:max-w-3xl dark:bg-cb-dark-blue"
-      dangerouslySetInnerHTML={{ __html: markdown }}
-    />
+    <div className='container mx-auto p-4'>
+      <article
+        className='prose mx-auto w-full flex-grow rounded-lg bg-white p-4 shadow prose-h1:text-center prose-a:text-cb-pink prose-strong:text-cb-pink dark:prose-invert dark:bg-cb-dark-blue lg:prose-xl'
+        dangerouslySetInnerHTML={{ __html: markdown }}
+      />
+    </div>
   </Page>
 )
 

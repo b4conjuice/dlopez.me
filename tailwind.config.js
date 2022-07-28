@@ -1,72 +1,64 @@
 module.exports = {
-  experimental: {
-    darkModeVariant: true,
-    applyComplexClasses: true,
-  },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: [
-    './src/components/**/*.{js,ts,jsx,tsx}',
+  content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    typography: theme => ({
-      default: {
-        css: {
-          // color: theme('colors.cobalt'),
-          color: false,
-          '@apply text-cobalt dark:text-gray-300': '',
-          strong: theme('colors.cobalt'),
-          'h1, h2, h3, h4': {
-            // color: theme('colors.cobalt'),
-            color: false,
-            '@apply text-cobalt dark:text-gray-300': '',
-            fontWeight: 'bold',
-            marginTop: 0,
-          },
-          h1: {
-            fontSize: theme('text.3xl'),
-            marginBottom: 0,
-            textAlign: 'center',
-          },
-          a: {
-            // color: theme('colors.cb-dusty-blue'),
-            color: false,
-            '@apply text-cb-dusty-blue dark:text-cb-pink': '',
-          },
-          'h3 > a': {
-            color: false,
-            '@apply text-cb-dusty-blue dark:text-cb-yellow': '',
-            textDecoration: 'none',
-          },
-          'ul > li:before': {
-            // backgroundColor: theme('colors.cb-dusty-blue'),
-            backgroundColor: false,
-            '@apply bg-cb-dusty-blue dark:bg-gray-600': '',
-          },
-        },
-      },
-      xl: {
-        css: {
-          'h1, h2, h3, h4': {
-            marginTop: 0,
-            fontWeight: 'bold',
-          },
-          h1: {
-            fontSize: theme('text.3xl'),
-          },
-        },
-      },
-      sm: {
-        css: {
-          h1: {
-            fontSize: theme('text.4xl'),
-          },
-        },
-      },
-    }),
+    // typography: theme => ({
+    //   default: {
+    //     css: {
+    //       // color: theme('colors.cobalt'),
+    //       color: false,
+    //       '@apply text-cobalt dark:text-gray-300': '',
+    //       strong: theme('colors.cobalt'),
+    //       'h1, h2, h3, h4': {
+    //         // color: theme('colors.cobalt'),
+    //         color: false,
+    //         '@apply text-cobalt dark:text-gray-300': '',
+    //         fontWeight: 'bold',
+    //         marginTop: 0,
+    //       },
+    //       h1: {
+    //         fontSize: theme('text.3xl'),
+    //         marginBottom: 0,
+    //         textAlign: 'center',
+    //       },
+    //       a: {
+    //         // color: theme('colors.cb-dusty-blue'),
+    //         color: false,
+    //         '@apply text-cb-dusty-blue dark:text-cb-pink': '',
+    //       },
+    //       'h3 > a': {
+    //         color: false,
+    //         '@apply text-cb-dusty-blue dark:text-cb-yellow': '',
+    //         textDecoration: 'none',
+    //       },
+    //       'ul > li:before': {
+    //         // backgroundColor: theme('colors.cb-dusty-blue'),
+    //         backgroundColor: false,
+    //         '@apply bg-cb-dusty-blue dark:bg-gray-600': '',
+    //       },
+    //     },
+    //   },
+    //   xl: {
+    //     css: {
+    //       'h1, h2, h3, h4': {
+    //         marginTop: 0,
+    //         fontWeight: 'bold',
+    //       },
+    //       h1: {
+    //         fontSize: theme('text.3xl'),
+    //       },
+    //     },
+    //   },
+    //   sm: {
+    //     css: {
+    //       h1: {
+    //         fontSize: theme('text.4xl'),
+    //       },
+    //     },
+    //   },
+    // }),
     extend: {
       colors: {
         cobalt: '#193549',
@@ -82,6 +74,19 @@ module.exports = {
       },
       backgroundImage: () => ({
         milky: "url('/img/milky.jpg')",
+      }),
+      typography: ({ theme }) => ({
+        '--tw-prose-body': theme('colors.pink[800]'),
+        base: {
+          // css: [
+          //   {
+          //     h3: {
+          //       // textDecoration: 'none',
+          //       color: theme('colors.pink[800]'),
+          //     },
+          //   },
+          // ],
+        },
       }),
     },
   },
