@@ -1,4 +1,4 @@
-# [niel.to](https://niel.to)
+# [dlopez.me](https://dlopez.me)
 
 This is an example of using [Tailwind CSS](https://tailwindcss.com) in a Next.js project, built using [with-bacon](https://github.com/b4conjuice/with-bacon), a create-next-app with custom configuration
 
