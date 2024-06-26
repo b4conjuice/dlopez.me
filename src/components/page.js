@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import CommandPalette from './command-palette'
+
 const DEFAULT_TITLE = 'hi my name is daniel'
 
 const nav = [
@@ -23,6 +25,14 @@ const Page = ({ title = DEFAULT_TITLE, children }) => {
   const { pathname } = useRouter()
   return (
     <>
+      <CommandPalette
+        commands={nav.map(navItem => ({
+          ...navItem,
+          id: navItem.url,
+          title: navItem.text,
+          subtitle: navItem.url,
+        }))}
+      />
       <div className='flex min-h-screen flex-col bg-gray-100 text-cobalt dark:bg-cobalt dark:text-gray-100'>
         <Head>
           <link rel='manifest' href='/manifest.json' />

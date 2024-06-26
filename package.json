@@ -7,6 +7,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.1",
+    "@heroicons/react": "^2.1.4",
     "dompurify": "^2.0.15",
     "firebase-admin": "^9.1.1",
     "jsdom": "^16.4.0",
