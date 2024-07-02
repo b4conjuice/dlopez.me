@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
 import CommandPalette from '@/components/commandPalette'
+import { socials } from '@/lib/common'
 
 const nav = [
   {
@@ -23,6 +24,26 @@ const nav = [
 export default function Header() {
   const router = useRouter()
   const pathname = usePathname()
+
+  const navCommands = nav.map(navItem => ({
+    ...navItem,
+    id: navItem.url,
+    title: navItem.text,
+    subtitle: navItem.url,
+    action: () => {
+      router.push(navItem.url)
+    },
+  }))
+  const socialCommands = socials.map(social => ({
+    id: social.url,
+    title: social.name,
+    subtitle: social.url,
+    action: () => {
+      window.open(social.url, '_blank')
+    },
+  }))
+
+  const commands = [...navCommands, ...socialCommands]
   return (
     <header>
       <nav className='px-2 py-1 text-lg'>
@@ -45,17 +66,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <CommandPalette
-        commands={nav.map(navItem => ({
-          ...navItem,
-          id: navItem.url,
-          title: navItem.text,
-          subtitle: navItem.url,
-          action: () => {
-            router.push(navItem.url)
-          },
-        }))}
-      />
+      <CommandPalette commands={commands} />
     </header>
   )
 }
