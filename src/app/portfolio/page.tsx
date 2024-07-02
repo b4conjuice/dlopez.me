@@ -26,7 +26,7 @@ export default async function Resume() {
         {portfolio.map(({ url, text, description }) => (
           <li
             key={url}
-            className='relative rounded-lg bg-white text-cobalt shadow md:hover:bg-blue-100'
+            className='relative rounded-lg bg-cobalt text-cb-white shadow md:hover:bg-cobalt/75'
           >
             <a
               className='block h-full p-4 md:text-2xl'
@@ -39,15 +39,12 @@ export default async function Resume() {
               </span>
               <p>{description}</p>
             </a>
-            <Link
-              href={`/resume#${text}`}
-              className='absolute right-4 top-4 text-cobalt'
-            >
+            <Link href={`/resume#${text}`} className='absolute right-4 top-4'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
-                className='h-6 w-6 fill-current hover:text-cb-pink'
+                className='h-6 w-6 text-cb-pink hover:text-cb-pink/75'
               >
                 <path
                   fillRule='evenodd'
