@@ -4,7 +4,7 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 
 ## TODO
 
-- [ ] add command palette
+- [x] add command palette
 - [ ] add personal tab 🥓
 - [ ] add uses tab [insert emoji here]
 

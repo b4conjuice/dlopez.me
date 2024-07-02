@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+
+import CommandPalette from '@/components/commandPalette'
 
 const nav = [
   {
@@ -19,6 +21,7 @@ const nav = [
 ]
 
 export default function Header() {
+  const router = useRouter()
   const pathname = usePathname()
   return (
     <header>
@@ -42,6 +45,17 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+      <CommandPalette
+        commands={nav.map(navItem => ({
+          ...navItem,
+          id: navItem.url,
+          title: navItem.text,
+          subtitle: navItem.url,
+          action: () => {
+            router.push(navItem.url)
+          },
+        }))}
+      />
     </header>
   )
 }
