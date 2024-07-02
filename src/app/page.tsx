@@ -1,5 +1,5 @@
 import { Main, Title } from '@/components/ui'
-import { DEFAULT_TITLE } from '@/app/layout'
+import { DEFAULT_TITLE } from '@/lib/common'
 
 export default function Home() {
   return (

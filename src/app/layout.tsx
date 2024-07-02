@@ -3,8 +3,7 @@ import type { Viewport } from 'next'
 import '@/styles/globals.css'
 
 import Header from '@/app/_components/header'
-
-export const DEFAULT_TITLE = 'hi my name is daniel'
+import { DEFAULT_TITLE } from '@/lib/common'
 
 export const metadata = {
   manifest: '/manifest.json',
