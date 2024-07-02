@@ -1,5 +1,11 @@
 # [dlopez.me](https://dlopez.me)
 
+## TODO
+
+- [x] add command palette
+- [ ] add personal tab 🥓
+- [ ] add uses tab [insert emoji here]
+
 This is an example of using [Tailwind CSS](https://tailwindcss.com) in a Next.js project, built using [with-bacon](https://github.com/b4conjuice/with-bacon), a create-next-app with custom configuration
 
 ## Deploy your own
