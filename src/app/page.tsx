@@ -1,10 +1,11 @@
 import { Main, Title } from '@/components/ui'
+import { DEFAULT_TITLE } from '@/app/layout'
 
 export default function Home() {
   return (
     <Main>
-      <div className='bg-milky flex items-center justify-center py-32'>
-        <Title>hi my name is daniel</Title>
+      <div className='flex items-center justify-center bg-milky py-32'>
+        <Title>{DEFAULT_TITLE}</Title>
       </div>
       <div className='flex -translate-y-16 transform items-center justify-center'>
         <a

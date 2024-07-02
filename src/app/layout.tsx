@@ -2,7 +2,7 @@ import type { Viewport } from 'next'
 
 import '@/styles/globals.css'
 
-const DEFAULT_TITLE = 'hi my name is daniel'
+export const DEFAULT_TITLE = 'hi my name is daniel'
 
 export const metadata = {
   manifest: '/manifest.json',
