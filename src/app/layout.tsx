@@ -2,6 +2,8 @@ import type { Viewport } from 'next'
 
 import '@/styles/globals.css'
 
+import Header from '@/app/_components/header'
+
 export const DEFAULT_TITLE = 'hi my name is daniel'
 
 export const metadata = {
@@ -27,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <div className='bg-cb-dark-blue text-cb-white flex min-h-screen flex-col'>
+        <div className='flex min-h-screen flex-col bg-cb-dark-blue text-cb-white'>
+          <Header />
           {children}
         </div>
       </body>
