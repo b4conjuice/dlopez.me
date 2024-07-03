@@ -36,9 +36,8 @@ export default function CommandPalette({
 }) {
   const [internalIsOpen, internalSetIsOpen] = useState(false)
   const [query, setQuery] = useState('')
-  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
-  const setIsOpen =
-    externalSetIsOpen !== undefined ? externalSetIsOpen : internalSetIsOpen
+  const isOpen = externalIsOpen ?? internalIsOpen
+  const setIsOpen = externalSetIsOpen ?? internalSetIsOpen
 
   useEffect(() => {
     function onKeydown(e: KeyboardEvent) {
@@ -50,7 +49,7 @@ export default function CommandPalette({
     return () => {
       window.removeEventListener('keydown', onKeydown)
     }
-  }, [isOpen])
+  }, [isOpen, setIsOpen])
 
   const fuse = new Fuse(commands, {
     keys: ['id', 'title', { name: 'name', weight: 2 }],

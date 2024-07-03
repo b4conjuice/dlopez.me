@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 import { nav } from '@/lib/common'
 
 export default function Header() {
-  const router = useRouter()
   const pathname = usePathname()
 
   return (
