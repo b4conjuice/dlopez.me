@@ -26,12 +26,19 @@ interface Command {
 export default function CommandPalette({
   commands,
   placeholder = 'search commands',
+  isOpen: externalIsOpen,
+  setIsOpen: externalSetIsOpen,
 }: {
   commands: Command[]
   placeholder?: string
+  isOpen?: boolean
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [internalIsOpen, internalSetIsOpen] = useState(false)
   const [query, setQuery] = useState('')
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
+  const setIsOpen =
+    externalSetIsOpen !== undefined ? externalSetIsOpen : internalSetIsOpen
 
   useEffect(() => {
     function onKeydown(e: KeyboardEvent) {
@@ -142,16 +149,18 @@ export default function CommandPalette({
           </TransitionChild>
         </Dialog>
       </Transition>
-      <button
-        className='absolute bottom-[0.5rem] right-[0.5rem] rounded-lg bg-cb-blue p-2 md:hidden
+      {externalSetIsOpen === undefined && (
+        <button
+          className='absolute bottom-16 right-4 block rounded-lg bg-cb-off-blue p-2 md:hidden
         '
-        type='button'
-        onClick={() => {
-          setIsOpen(!isOpen)
-        }}
-      >
-        <RocketLaunchIcon className='h-6 w-6 text-cb-yellow' />
-      </button>
+          type='button'
+          onClick={() => {
+            setIsOpen(!isOpen)
+          }}
+        >
+          <RocketLaunchIcon className='h-6 w-6 text-cb-yellow' />
+        </button>
+      )}
     </>
   )
 }

@@ -5,9 +5,9 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 ## TODO
 
 - [x] add command palette
+- [x] replace header with footer nav (maybe on just mobile?)
 - [ ] add personal tab 🥓
 - [ ] add uses tab [insert emoji here]
-- [ ] replace header with footer nav (maybe on just mobile?)
 
 ## What's next? How do I make an app with this?
 
