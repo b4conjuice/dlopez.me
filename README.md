@@ -6,6 +6,8 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 
 - [x] add command palette
 - [x] replace header with footer nav (maybe on just mobile?)
+- [x] add loading states to resume/portfolio pages
+- [ ] add hidden bacon.build link in title
 - [ ] add personal tab 🥓
 - [ ] add uses tab [insert emoji here]
 
