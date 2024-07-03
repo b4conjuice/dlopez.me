@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import {
   BriefcaseIcon,
   DocumentTextIcon,
@@ -22,6 +22,7 @@ const navIcons: Record<string, React.ReactNode> = {
 
 export default function FooterComponent() {
   const router = useRouter()
+  const pathname = usePathname()
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false)
 
   const navCommands = nav.map(navItem => ({
@@ -45,15 +46,21 @@ export default function FooterComponent() {
   const commands = [...navCommands, ...socialCommands]
   return (
     <>
-      <Footer className='md:hidden'>
+      <Footer className='md:hidden' colorClassName='text-cb-pink'>
         {nav.map(({ url, text }) => (
           <FooterListItem key={url}>
-            <Link
-              className='flex w-full justify-center py-2 hover:text-cb-yellow/75'
-              href={url}
-            >
-              {navIcons[text]}
-            </Link>
+            {pathname === url ? (
+              <span className='flex w-full justify-center py-2 text-cb-white'>
+                {navIcons[text]}
+              </span>
+            ) : (
+              <Link
+                className='flex w-full justify-center py-2 hover:text-cb-pink/75'
+                href={url}
+              >
+                {navIcons[text]}
+              </Link>
+            )}
           </FooterListItem>
         ))}
         <FooterListItem
@@ -61,7 +68,7 @@ export default function FooterComponent() {
             setIsCommandPaletteOpen(!isCommandPaletteOpen)
           }}
         >
-          <RocketLaunchIcon className='h-6 w-6 hover:text-cb-yellow/75' />
+          <RocketLaunchIcon className='h-6 w-6 text-cb-yellow hover:text-cb-yellow/75' />
         </FooterListItem>
       </Footer>
       <CommandPalette

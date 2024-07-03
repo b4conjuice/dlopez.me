@@ -4,13 +4,23 @@ import classNames from 'classnames'
 export default function Footer({
   children,
   className,
+  colorClassName,
+  backgroundClassName,
 }: {
   children?: React.ReactNode
   className?: string
+  colorClassName?: string
+  backgroundClassName?: string
 }) {
   return (
     <footer className={classNames('sticky bottom-0 pb-4', className)}>
-      <ul className='mx-4 flex items-center divide-x divide-cb-white rounded-lg bg-cb-dusty-blue text-cb-yellow'>
+      <ul
+        className={classNames(
+          'mx-4 flex items-center divide-x divide-cb-white rounded-lg',
+          colorClassName ?? 'text-cb-yellow',
+          backgroundClassName ?? 'bg-cb-dusty-blue'
+        )}
+      >
         {children}
       </ul>
     </footer>
