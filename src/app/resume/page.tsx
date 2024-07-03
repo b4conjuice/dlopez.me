@@ -13,7 +13,7 @@ export default async function Resume() {
   const data: Content = await fetcher(process.env.RESUME_URL!)
   const content = sanitize(data.markdown)
   return (
-    <Main className='flex flex-col p-4'>
+    <Main className='flex flex-col'>
       <div className='container mx-auto p-4'>
         <Markdown content={content} />
       </div>

@@ -20,7 +20,7 @@ export default async function Resume() {
     }
   })
   return (
-    <Main className='flex flex-grow flex-col space-y-4 md:w-full md:items-center'>
+    <Main className='flex flex-grow flex-col space-y-4 py-4 md:w-full md:items-center'>
       <Title>portfolio</Title>
       <ul className='grid grid-cols-1 gap-4 px-4 lg:container lg:max-w-3xl lg:grid-cols-2'>
         {portfolio.map(({ url, text, description }) => (
