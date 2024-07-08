@@ -2,7 +2,6 @@ import type { Viewport } from 'next'
 
 import '@/styles/globals.css'
 
-import Header from '@/app/_components/header'
 import Footer from '@/app/_components/footer'
 import { DEFAULT_TITLE } from '@/lib/common'
 
@@ -30,7 +29,6 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <div className='flex min-h-screen flex-col bg-cb-dark-blue text-cb-white'>
-          <Header />
           {children}
           <Footer />
         </div>

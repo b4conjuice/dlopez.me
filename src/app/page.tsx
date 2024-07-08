@@ -1,5 +1,7 @@
-import { Main, Title } from '@/components/ui'
-import { DEFAULT_TITLE, socials } from '@/lib/common'
+import Link from 'next/link'
+
+import { Main } from '@/components/ui'
+import { socials } from '@/lib/common'
 
 const LinkedInIcon = () => (
   <svg
@@ -32,16 +34,20 @@ const socialIcons: Record<string, () => JSX.Element> = {
 
 export default function Home() {
   return (
-    <Main>
-      <div className='flex items-center justify-center bg-milky py-32'>
-        <Title>{DEFAULT_TITLE}</Title>
-      </div>
-      <div className='flex -translate-y-16 transform flex-col items-center justify-center gap-4 md:flex-row'>
-        <img
-          className='h-48 rounded-full md:h-72'
-          src='/img/me.jpg'
-          alt='daniel'
-        />
+    <Main className='flex flex-col justify-center'>
+      <div className='flex flex-col items-center justify-center space-y-3 bg-milky bg-cover bg-center py-32 lg:flex-grow lg:py-0'>
+        <p className='text-center leading-relaxed md:text-2xl lg:text-4xl lg:leading-10'>
+          hi my name is{' '}
+          <Link className='text-cb-orange hover:underline' href='/resume'>
+            daniel
+          </Link>
+          <br />
+          and i{' '}
+          <Link className='text-cb-yellow hover:underline' href='/portfolio'>
+            build
+          </Link>{' '}
+          things.
+        </p>
         <ul className='flex space-x-4'>
           {socials.map(({ name, url }) => {
             const Icon = socialIcons[name]
