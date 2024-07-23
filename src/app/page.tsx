@@ -38,12 +38,18 @@ export default function Home() {
       <div className='flex flex-col items-center justify-center space-y-3 bg-milky bg-cover bg-center py-32 lg:flex-grow lg:py-0'>
         <p className='text-center leading-relaxed md:text-2xl lg:text-4xl lg:leading-10'>
           hi my name is{' '}
-          <Link className='text-cb-orange hover:underline' href='/resume'>
+          <Link
+            className='text-cb-orange underline hover:text-cb-orange/75'
+            href='/resume'
+          >
             daniel
           </Link>
           <br />
           and i{' '}
-          <Link className='text-cb-yellow hover:underline' href='/portfolio'>
+          <Link
+            className='text-cb-yellow underline hover:text-cb-yellow/75'
+            href='/portfolio'
+          >
             build
           </Link>{' '}
           things.
