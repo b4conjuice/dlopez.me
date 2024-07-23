@@ -18,7 +18,7 @@ export const nav = [
 export const socials = [
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/in/daniel-lopez-a7483871',
+    url: 'https://www.linkedin.com/in/d4niellopez',
   },
   {
     name: 'github',
