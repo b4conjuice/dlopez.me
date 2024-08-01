@@ -13,6 +13,7 @@ import {
 import Footer, { FooterListItem } from '@/components/ui/footer'
 import CommandPalette from '@/components/commandPalette'
 import { socials, nav } from '@/lib/common'
+import copyToClipboard from '@/lib/copyToClipboard'
 
 const navIcons: Record<string, React.ReactNode> = {
   home: <HomeIcon className='h-6 w-6' />,
@@ -28,7 +29,7 @@ export default function FooterComponent() {
   const navCommands = nav.map(navItem => ({
     ...navItem,
     id: navItem.url,
-    title: navItem.text,
+    title: `Go to ${navItem.text} page`,
     subtitle: navItem.url,
     action: () => {
       router.push(navItem.url)
@@ -36,14 +37,22 @@ export default function FooterComponent() {
   }))
   const socialCommands = socials.map(social => ({
     id: social.url,
-    title: social.name,
+    title: `Open ${social.name} in a new tab`,
     subtitle: social.url,
     action: () => {
       window.open(social.url, '_blank')
     },
   }))
+  const copySocialCommands = socials.map(social => ({
+    id: `copy-${social.url}`,
+    title: `Copy ${social.name} url`,
+    subtitle: social.url,
+    action: () => {
+      copyToClipboard(social.url)
+    },
+  }))
 
-  const commands = [...navCommands, ...socialCommands]
+  const commands = [...navCommands, ...socialCommands, ...copySocialCommands]
   return (
     <>
       <Footer className='md:hidden' colorClassName='text-cb-pink'>
